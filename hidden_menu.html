@@ -45,22 +45,23 @@
             height: 700px;
             background-color: antiquewhite;
             position: absolute;
-            top: 0;
-            left: 100%;
+            top: -100%;
+            left: 0%;
             display: flex;
             font-size: 50px;
             flex-direction: column;
             justify-content: center;
             align-items: center;        
             transition-duration: 0.5s;
-        }
+            overflow: hidden;
+            }
 
         .menu_wrap li{
             margin-bottom: 50px;
         }
 
         #menu_input:checked~.menu_wrap{
-            left: 0;
+            top: 0;
         }
 
         section{
