@@ -1,12 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tab_menu</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap{
+            width: 400px;
+            height: 500px;
+            border: 5px solid black;
+            margin: 100px auto;
+        }
+
+        input{
+            display: none;
+        }
+
+       .btn_wrap{
+           height: 100px;
+           display: flex;
+           align-items: center;           
+       }
+
+       .btn{
+           width: 33.33333%;
+           height: 100%;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           background-color: lightcoral;
+           cursor: pointer;
+           /* => 마우스 모양을 손가락 모양으로 변경해줌 */
+       }
+
+       .con_wrap{
+           height: 400px;           
+           position: relative;
+       }
+
+       .con{
+           width: 100%;
+           height: 100%;
+           background-color: lightgoldenrodyellow;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           font-size: 50px;
+           position: absolute;
+           top: 0;
+           left: 0;
+           display: none;
+       }
+
+       .con:nth-child(1){
+           display:flex;
+       }
+
+       #tab_1:checked~.con_wrap .con_1{
+           display: flex;
+       }   
+
+       #tab_2:checked~.con_wrap .con_2{
+           display: flex;
+       }
+
+       #tab_3:checked~.con_wrap .con_3{
+           display: flex;
+       }
+
+       #tab_1:checked~.btn_wrap .btn_1{
+           background-color: lightgoldenrodyellow;;
+           color: #1d1d1d;
+       }
+
+       #tab_2:checked~.btn_wrap .btn_2{
+           background-color: lightgoldenrodyellow;;
+           color: #1d1d1d;
+       }
+
+       #tab_3:checked~.btn_wrap .btn_3{
+           background-color: lightgoldenrodyellow;
+           color: #1d1d1d;
+       }
+       
+
+
+
+    </style>
+
+
 </head>
 <body>
+
+    <div class="wrap">
+
+        <input type="radio" name="tab" id="tab_1" checked>
+        <input type="radio" name="tab" id="tab_2">
+        <input type="radio" name="tab" id="tab_3">
+        
+        <div class="btn_wrap">
+            <label for="tab_1" class="btn btn_1">Button_1</label>
+            <label for="tab_2" class="btn btn_2">Button_2</label>
+            <label for="tab_3" class="btn btn_3">Button_3</label>
+        </div>
+
+        <div class="con_wrap">
+            <div class="con con_1">Content1</div>
+            <div class="con con_2">Content2</div>
+            <div class="con con_3">Content3</div>
+
+        </div>
+
+
+
+
+    </div>
     
+
 </body>
 </html>
